@@ -46,23 +46,22 @@ function onSearchInput(event) {
 
 function renderCountries(res) {
   return res
-    .map(e => {
-      return `
+    .map(
+      e => `
                 <div class='country-list__item'>
                     <img class='country-list__flag' src='${e.flag}'
                         width="30"
                     >
                     <span>${e.name}</span>
                 </div>
-            `;
-    })
+            `
+    )
     .join('');
 }
 
 function renderSingleCountry(res) {
-  return res
-    .map(e => {
-      return `
+  const e = res[0];
+  return `
                 <div class='country-info'>
                     <div class='country-info__logo'>
                     <img src='${e.flag}'
@@ -90,6 +89,4 @@ function renderSingleCountry(res) {
                     </ul>
                 </div>
             `;
-    })
-    .join('');
 }
